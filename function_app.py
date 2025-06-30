@@ -121,13 +121,6 @@ def process_pdf_function(myblob: func.InputStream):
         logging.error(f"Error processing PDF {myblob.name}: {str(e)}")
         raise
 
-@app.blob_trigger(arg_name="myblob", path="container1",
-                               connection="storage1rag_STORAGE") 
-def test_function(myblob: func.InputStream):
-    logging.info(f"Python blob trigger function processed blob"
-                f"Name: {myblob.name}"
-                f"Blob Size: {myblob.length} bytes")
-
 @app.route(route="generateEmbeddings", auth_level=func.AuthLevel.FUNCTION)
 def generate_embeddings(req: func.HttpRequest) -> func.HttpResponse:
     """
