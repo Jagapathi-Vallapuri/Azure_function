@@ -1,0 +1,18 @@
+
+# Configuration for the PDF extraction pipeline
+
+# Input and output directories
+input_dir: "input"
+output_dir: "extracted_output"
+processed_log: "processed_pdfs.log"
+
+# Extraction settings
+extract:
+  text: true
+  tables: true
+  images: true
+
+# Logging configuration
+logging:
+  level: INFO
+  file: "pipeline.log"
